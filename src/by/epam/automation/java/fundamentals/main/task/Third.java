@@ -1,6 +1,6 @@
 package by.epam.automation.java.fundamentals.main.task;
 
-//Вывести заданное количество случайных чисел с переходом и без перехода на новую строку
+//3. Вывести заданное количество случайных чисел с переходом и без перехода на новую строку
 
 import java.util.Random;
 import java.util.Scanner;
