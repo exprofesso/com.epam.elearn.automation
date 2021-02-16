@@ -13,6 +13,7 @@ public class Third {
         System.out.println("Укажите разумное число чисел для вывода на консоль");
         int number = scanner.nextInt();
         Random random = new Random();
+        scanner.close();
         for (int i = 0; i < number; i++) {
             int a = random.nextInt();
             System.out.println(a);
