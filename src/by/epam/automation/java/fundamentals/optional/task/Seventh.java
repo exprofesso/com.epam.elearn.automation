@@ -7,35 +7,36 @@ import java.util.Scanner;
 public class Seventh {
     public static void main(String[] args) {
 
-        String[] array = new String[5];
-
-
+        int[] array = new int[5];
         Scanner scanner = new Scanner(System.in);
         System.out.println("Укажите 5 чисел");
         // заполение массива
         for (int i = 0; i < array.length; i++) {
-            array[i] = scanner.nextLine();
+            array[i] = scanner.nextInt();
         }
         // вывод массива чисел
         for (int i = 0; i < array.length; i++) {
- //           System.out.print(array[i] + " ");
         }
+
         System.out.println();
-            String answer = "";
-        // поиск из различных чисел
-        for (int z = 0; z < array.length; z++) {
+            // 
+        for (int elem : array) {
+            if (unical(elem)) System.out.println(elem);
+        }
+    }
 
-            for (int i = 0; i < array[z].length(); i++) {
 
-                for (int j = i + 1; j < array.length; j++) {
-                    if (array[i].charAt(i) != array[i].charAt(j)){
-                        answer += array[i].charAt(i);
-                    }
-                    
+    // поиск из различных чисел
+    public static boolean unical(int array) {
+        boolean answer = true;
+        String s = String.valueOf(array);
+        for (int i = 0; i < s.length() - 1; i++) {
+            for (int j = i + 1; j < s.length(); j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    answer = false;
                 }
             }
         }
-        System.out.println(answer);
-
+        return answer;
     }
 }
