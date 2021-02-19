@@ -19,10 +19,12 @@ public class Seventh {
         }
 
         System.out.println();
-            // 
-        for (int elem : array) {
-            if (unical(elem)) System.out.println(elem);
+            // вывод результата
+        for (int i = 0; i < array.length; i++){
+            if(unical(array[i])) System.out.println("Числа из уникальных цифр  " + array[i]);
         }
+
+
     }
 
 
