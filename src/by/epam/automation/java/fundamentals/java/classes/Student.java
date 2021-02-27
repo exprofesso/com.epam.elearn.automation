@@ -42,17 +42,9 @@ public class Student {
 
     @Override
     public String toString() {
-        return "Student{" +
-                "id = " + id +
-                ", surname = '" + surname + '\'' +
-                ", name = '" + name + '\'' +
-                ", patronymic = '" + patronymic + '\'' +
-                ", birth = " + birth +
-                ", telefon = '" + telefon + '\'' +
-                ", faculty = '" + faculty + '\'' +
-                ", course = '" + course + '\'' +
-                ", group = '" + group + '\'' +
-                '}';
+        return "Student id = " + id + " surname = " + surname + " name = " + name + " patronymic = " + patronymic +
+                " birth = " + birth + " telefon = " + telefon + " faculty = " + faculty + " course = " + course +
+                " group = " + group;
     }
 
     public static void main(String[] args) {
@@ -69,7 +61,16 @@ public class Student {
         students[8] = new Student(9, "Podkolzin", "Maks", "Kuzmich", 1999, "375336763344", "MF", "5", "502");
         students[9] = new Student(10, "Goluber", "Vadim", "Petrovich", 1975, "375338223344", "MF", "2", "205");
 
-        faculty(students, "kf");
+        faculty(students, "ff");
+        System.out.println("\n********\n");
+
+        sortFaculty(students, "mf", "5");
+        System.out.println("\n********\n");
+
+        sortBirth(students, 1997);
+        System.out.println("\n********\n");
+
+        sortGroup(students, "102");
     }
 
 
@@ -113,6 +114,21 @@ public class Student {
         if (count == 0) {
             System.out.println("Нет студенты младше " + birth + " рождения");
         }
+    }
+
+    // вывод студетоы по групе
+    public static void sortGroup(Student[] students, String group) {
+        int count = 0;
+        for (int i = 0; i < students.length; i++) {
+            if (students[i].group.equalsIgnoreCase(group)) {
+                System.out.println(students[i]);
+                count++;
+            }
+        }
+        if (count == 0) {
+            System.out.println("В данной группе нет студентов");
+        }
+
     }
 
 
